@@ -20,7 +20,8 @@
 
 > ⚠️ **Note**: Hostagram is still in development. Current version is **1.0**, with the final release expected to be **3.3**, bringing many new features!
 
-![e](piczz.png)
+![image](https://github.com/user-attachments/assets/eba7ab50-87f8-46c1-8a79-3932a724e2c9)
+
 ---
 
 ## Main Features
