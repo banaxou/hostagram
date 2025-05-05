@@ -1,4 +1,4 @@
-# Hostagram 1.0  
+# 🩷 Hostagram 
 ![image](https://github.com/user-attachments/assets/72532e05-2bc1-43e0-9410-a049e7716660)
 
 **Hostagram** is an OSINT tool based on Instagram, designed to extract useful information such as:
@@ -65,9 +65,9 @@ python hostagram.py
 
 ---
 
-## Contribute
+## 🪷 Contribute
 
-Feel free to open an issue or pull request to suggest improvements! ;)
+**Feel free to open an issue or pull request to suggest improvements! ;)**
 
 Your donations support my open source tools and major projects:
 
