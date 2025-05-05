@@ -1,5 +1,5 @@
 # Hostagram 1.0  
-![image](https://github.com/user-attachments/assets/1de8eca7-152b-4d8e-9dba-3cbaa5f56e5a)
+![image](https://github.com/user-attachments/assets/72532e05-2bc1-43e0-9410-a049e7716660)
 
 **Hostagram** is an OSINT tool based on Instagram, designed to extract useful information such as:
 
