@@ -1,3 +1,5 @@
 instaloader
 getpass
+fade
+json
 requests
