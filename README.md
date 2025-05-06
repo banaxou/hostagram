@@ -1,4 +1,8 @@
 # 🔴 Hostagram 
+
+<a href="https://github.com/banaxou/GhubScan /stargazers"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge"/></a>
+<a href="https://github.com/banaxou/awesome-github-profile-readme/network/members"><img src="https://img.shields.io/github/forks/banaxou/hostagram" alt="Forks Badge"/></a>
+
 ![image](https://github.com/user-attachments/assets/72532e05-2bc1-43e0-9410-a049e7716660)
 
 **Hostagram** is an OSINT tool based on Instagram, designed to extract useful information such as:
