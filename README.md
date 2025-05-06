@@ -55,7 +55,7 @@ Monitors real-time activity of a target profile. Any update (new follow, post, e
 ```bash
 git clone https://github.com/banaxou/hostagram
 cd hostagram
-start install.bat
+pip install -r requirements.txt
 python hostagram.py
 ```
 > 🛠️ Hostagram is currently version 1.0. Many upgrades are under development!
