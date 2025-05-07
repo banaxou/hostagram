@@ -68,8 +68,7 @@ python hostagram.py
 
 
 
- # 🚀Roadmap coming soon...
-
+ # 🚀Roadmap 
 * v1.0: Initial release
 * v1.1: ‎📅 Planned for Next Sunday
 - 🛠️ **Bug Fixes**  
