@@ -27,6 +27,9 @@
 ## 🚨 Before Getting Started
 I recommend creating a dedicated Instagram account for OSINT, This will allow you to connect to Hostagram Note that without a connection some features of the tool will not be available
 
+# 🌹 Hostagram will never steal your passwords !!
+
+
 
 ![image](https://github.com/user-attachments/assets/eba7ab50-87f8-46c1-8a79-3932a724e2c9)
 
