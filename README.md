@@ -71,7 +71,12 @@ python hostagram.py
  # 🚀Roadmap coming soon...
 
 * v1.0: Initial release
-
+## **v1.1 - Planned for Next Sunday ðŸ“…**  
+- **Bug Fixes**  
+- **Improved Profile Information**  
+- **More ID Details**  
+- **Watch User Option**  
+- Choose between watching with **username** or **ID**  
 
 
 ---
