@@ -72,10 +72,10 @@ python hostagram.py
 
 * v1.0: Initial release
 * v1.1: ‎📅 Planned for Next Sunday
-- 🛠️**Bug Fixes**  
-- 👤**Improved Profile Information**  
-- 🆔**More ID Details**  
-- 👁️‍🗨️**Watch User Option**  
+- 🛠️ **Bug Fixes**  
+- 👤 **Improved Profile Information**  
+- 🆔 **More ID Details**  
+- 👁️‍🗨️ **Watch User Option**  
 - Choose between watching with **username** or **ID**  
 
 
