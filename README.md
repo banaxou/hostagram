@@ -25,9 +25,8 @@
 > ⚠️ **Note**: Hostagram is still in development. Current version is **1.0**, with the final release expected to be **3.3**, bringing many new features!
 
 ## 🚨 Before Getting Started
-I recommend creating a dedicated Instagram account for OSINT, This will allow you to connect to Hostagram Note that without a connection some features of the tool will not be available
-
-## 🌹 Hostagram will never steal your passwords !!
+I recommend creating a dedicated Instagram account for OSINT, This will allow you to connect to Hostagram Note that without a connection some features of the tool will not be available,
+Hostagram will never steal your passwords !!
 
 
 
