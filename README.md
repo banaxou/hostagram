@@ -97,6 +97,5 @@ Your donations support my open source tools and major projects:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" width="20"> 
 
-[bc1qs2sf3hwz9a72vk6yd2cnahzfpequlw67k8hd5c](https://blockchair.com/bitcoin/address/bc1qs2sf3hwz9a72vk6yd2cnahzfpequlw67k8hd5c)
-
+[bc1pch0t574x0xpr6vad5ru0862kyw9le8qv2ja3ufdpnhz4hfcp54ksn2guqy](https://blockchair.com/bitcoin/address/bc1pch0t574x0xpr6vad5ru0862kyw9le8qv2ja3ufdpnhz4hfcp54ksn2guqy)
 ---
