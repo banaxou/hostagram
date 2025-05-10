@@ -70,7 +70,7 @@ python hostagram.py
 
  # 🚀Roadmap 
 * v1.0: Initial release
-* v1.1: ‎📅 Planned for Next Sunday
+* v1.1: ‎📅 Planned for Next Sunday 16h30 🇫🇷
 - 🛠️ **Bug Fixes**  
 - 👤 **Improved Profile Information**  
 - 🆔 **More ID Details**  
