@@ -22,7 +22,7 @@
 * Profile Picture URL 🌐  
 * and much more..
 
-> ⚠️ **Note**: Hostagram is still in development. Current version is **1.0**, with the final release expected to be **3.3**, bringing many new features!
+> ⚠️ **Note**: Hostagram is still in development. Current version is **1.1**, with the final release expected to be **3.3**, bringing many new features!
 
 ## 🚨 Before Getting Started
 I recommend creating a dedicated Instagram account for OSINT, This will allow you to connect to Hostagram Note that without a connection some features of the tool will not be available,
@@ -64,20 +64,14 @@ cd hostagram
 pip install -r requirements.txt
 python hostagram.py
 ```
-> 🛠️ Hostagram is currently version 1.0. Many upgrades are under development!
+> 🛠️ Hostagram is currently version 1.1 Many upgrades are under development!
 
 
 
  # 🚀Roadmap 
-* v1.0: Initial release
-* v1.1: ‎📅 Planned for Next Sunday 16h30 🇫🇷
-- 🛠️ **Bug Fixes**  
-- 👤 **Improved Profile Information**  
-- 🆔 **More ID Details**  
-- 👁️‍🗨️ **Watch User Option**  
-- Choose between watching with **username** or **ID**  
-
-
+* v1.0: old version
+* v1.1: ‎Initial release
+* v1.2: soon
 ---
 
 ## 🪷 Contribute
