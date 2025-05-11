@@ -9,17 +9,23 @@ import json
 from datetime import datetime
 
 
-v = "v1.0"  # en blanc
+v = "v1.1"  
 q = "https://github.com/banaxou/"
 white = "\033[97m"
 red = "\033[91m"
-BLUE = "\033[94m"
+b = "\033[94m"
 r = "\033[0m"
-
+bann = """
+          .__                   __                                         
+          |  |__   ____  ______/  |______    ________________    _____        
+          |  |  \ /  _ \/  ___|   __\__  \  / ___\_  __ \__  \  /     \         
+          |   Y  (  <_> )___ \ |  |  / __ \/ /_/  >  | \// __ \|  Y Y  \      
+          |___|  /\____/____  >|__| (____  |___  /|__|  (____  /__|_|  /
+               \/           \/           \/_____/            \/      \/
+"""
 ban = fr"""
           code by ovax {v}  
        {fade.greenblue(q)} 
-
           .__                   __                                         {white}╔                ╗ {white}
           |  |__   ____  ______/  |______    ________________    _____        1: user info 
           |  |  \ /  _ \/  ___|   __\__  \  / ___\_  __ \__  \  /     \         
@@ -44,13 +50,14 @@ loginz = fr"""
 
 def user_info():
     ig = instaloader.Instaloader()
-
     w = 50
-    ins = input(f"> Enter Instagram username: ") or "zuck"
+    red = "\033[1;31m"
+    r = "\033[0m"
+
+    ins = input(f"{red}>{r} Enter Instagram username: ") or "zuck"
 
     try:
         user = instaloader.Profile.from_username(ig.context, ins)
-
         info = {
             "Full name": user.full_name,
             "Username": user.username,
@@ -66,8 +73,8 @@ def user_info():
             "Private account": user.is_private,
             "Verified account": user.is_verified,
             "Has highlight reels": user.has_highlight_reels,
-            "Biography hashtags": user.biography_hashtags,
-            "Biography mentions": user.biography_mentions,
+            "Biography hashtags": [str(tag) for tag in user.biography_hashtags],  
+            "Biography mentions": [str(mention) for mention in user.biography_mentions], 
             "Follows viewer": user.follows_viewer,
             "Followed by viewer": user.followed_by_viewer,
             "Blocked by viewer": user.blocked_by_viewer,
@@ -76,56 +83,63 @@ def user_info():
 
         print(f"╔{'═' * w}╗")
         for key, value in info.items():
-            print(f" {red} {key}{r}: {w}{value}{r}")
-        input(f"╚{'═' * w}╝") 
+            print(f" {red}{key}{r}: {value}")
+        input(f"╚{'═' * w}╝")
 
-        filex = f"{ins}.txt"  # save les data dans un fichier txt pour garder infos sur la cible 
-        with open(filex, "w", encoding="utf-8") as f:
+        file_txt = f"{ins}.txt"
+        with open(file_txt, "w", encoding="utf-8") as f_txt:
             for key, value in info.items():
-                f.write(f"{key}: {value}\n")
+                f_txt.write(f"{key}: {value}\n")
 
+        xjson = f"{ins}.json"
+        with open(xjson, "w", encoding="utf-8") as jsson:
+         json.dump(info, jsson, ensure_ascii=False, indent=4)
+
+        print(f"{b}Data has been saved to {file_txt} and {xjson}{r}")
+        time.sleep(2)
     except instaloader.exceptions.ProfileNotExistsException:
-        print(f"{red}Error{reset}: The user does not exist")
-
-
+        print(f"{red}Error{r}: The user does not exist")
+    except Exception as e:
+        print(f"{red}Unexpected error{r}: {e}")
 
 
 def id_info():
     session_file = "sessionid.txt"
-    x= 50
+    x = 50
+
     if os.path.exists(session_file):
         with open(session_file, "r") as f:
             session_id = f.read().strip()
     else:
-        session_id = ""
-
+        session_id = "" 
 
     if not session_id:
-        session_id = input("Enter your session ID : ").strip()
+        session_id = input(f"{b}>{r} Enter your session ID: ").strip()
         with open(session_file, "w") as f:
             f.write(session_id)
 
-    
-    idx = input("enter instagram id : ").strip() or "505"
+    idx = input(f"{red}>{r} Enter Instagram ID: ").strip() or "314216"
 
     headers = {
         "User-Agent": "Instagram 219.0.0.12.117 Android",
         "Cookie": f"sessionid={session_id}",
-        "Accept": "*/*"
+        "Accept": "*/*",
     }
 
     url = f"https://i.instagram.com/api/v1/users/{idx}/info/"
     res = requests.get(url, headers=headers)
 
     if res.status_code == 200:
-        data = res.json()['user']
-        print(f"╔{'═' * x}╗")
-        print(f"username: {data['username']}")
-        input(f"╚{'═' * x}╝")
-        # plus d'info dans la 1.1
-    else:
-        print(f"Error {res.status_code} : {res.text}")
+        data = res.json().get('user', {})
 
+        print(f"╔{'═' * x}╗")
+        print(f" {red}Username{r}: {data.get('username', 'N/A')}")
+        print(f" {red}Show IG App Switcher Badge{r}: {data.get('show_ig_app_switcher_badge', 'N/A')}")
+        print(f" {red}ID{r}: {data.get('id', 'N/A')}")
+        print()
+        input(f"╚{'═' * x}╝")
+    else:
+        print(f"Error {res.status_code}: {res.text}")
 
 def truc_la(info):
     r = "\033[0m"
@@ -138,7 +152,7 @@ def truc_la(info):
     def center(text, w=width):
         return text.center(w)
 
-    def separator(char="─", w=None): # by IA ... elle a contribué a la creation de la focntion seperator "oui j'avais la flemme + trop complex"
+    def separator(char="─", w=None): # Fonction faite par IA pour la séparation "oui j'avais la flemme mais tu va me dit mais un dev n'a jamais la flemme ?" à bas écoute je faite pas de l'ascii art == trop complexe
         try:
             w = os.get_terminal_size().columns if w is None else w
         except:
@@ -154,7 +168,7 @@ def truc_la(info):
     print()
     print(center(f"{info['Full name']}  ({info['Type account']}) {'VERIFIED' if info['Verified'] == 'Yes' else ''}"))
     print(center(f"@{info['Username']}  |  ID: {info['ID']}"))
-    print(center(f"[{'PRIVATE' if info['Private account'] == 'Private' else 'PUBLIC'} ACCOUNT"))
+    print(center(f"[{'PRIVATE' if info['Private account'] == 'Private' else 'PUBLIC'} ACCOUNT]"))
     print()
 
     # Followers / Followees / Posts
@@ -175,13 +189,71 @@ def truc_la(info):
     print(separator("─"))
     print(center(f"Category: {info['Business category']}"))
     print(center(f"Highlights available: {info['Highlight reels']}"))
-    print(separator("═"))
-# end code IA
+    print(separator("═"))# end code IA
 
+def watch_id():
+    session_file = "sessionid.txt"
+
+    if os.path.exists(session_file):
+        with open(session_file, "r") as f:
+            session_id = f.read().strip()
+    else:
+        session_id = ""
+
+    if not session_id:
+        session_id = input(f"{b}>{r} Enter your session ID: ").strip()
+        with open(session_file, "w") as f:
+            f.write(session_id)
+
+    idx = input(f"{red}>{r}Enter Instagram ID: ").strip() or "314216"
+
+    headers = {
+        "User-Agent": "Instagram 219.0.0.12.117 Android",
+        "Cookie": f"sessionid={session_id}",
+        "Accept": "*/*",
+    }
+
+    while True:
+        try:
+            url = f"https://i.instagram.com/api/v1/users/{idx}/info/"
+            res = requests.get(url, headers=headers)
+
+            if res.status_code == 200:
+                data = res.json().get('user', {})
+                os.system("cls" if os.name == "nt" else "clear")
+
+                def separator(char="═", width=80): # Fonction faite par IA pour la séparation
+                    return char * width
+
+                def center(text, width=80):
+                    return text.center(width)
+                
+                print("\033[1;34m" + separator() + "\033[0m")
+                print("\033[1;34m" + center(" INSTAGRAM PROFILE VIEWER ") + "\033[0m")
+                print("\033[1;34m" + separator() + "\033[0m")
+                print()
+                print(center(f"Username: \033[1;33m{data.get('username', 'N/A')}\033[0m"))
+                print(center(f"ID: \033[1;33m{data.get('id', 'N/A')}\033[0m"))
+                print()
+                print(separator("─"))
+                print(center(f"Profile Picture URL: \033[1;33m{data.get('profile_pic_url', 'N/A')}\033[0m"))
+                print(center(f"Show IG App Switcher Badge: \033[1;33m{data.get('show_ig_app_switcher_badge', 'N/A')}\033[0m"))
+                print(separator("═"))
+                print()
+            else:
+                print(f"\033[1;31mError {res.status_code}:\033[0m {res.text}")
+                break
+
+        except Exception as e:
+            print(f"\033[1;31mError:\033[0m {e}")
+            break
+
+        time.sleep(10) # end code by IA
+        
 def watch_user():
     ig = instaloader.Instaloader()
 
-    ins = input("> Enter Instagram username: ") or "zuck"
+    ins = input(f"{red}>{r} Enter Instagram username: ") or "zuck"
     log_file = f"{ins}_log.txt"
 
     def log_info(info_dict):
@@ -223,8 +295,24 @@ def watch_user():
         except Exception as e:
             print(f"{red}Error : {e}{r}")
 
-        time.sleep(15)  # 15s  plus chill que 5s pour eviter les ban api ou mes un vpn jsp mdrr 
+        time.sleep(15)  # 15s  plus chill que 5s pour eviter les ban api ou active un vpn ou proxy
+def watch_menu():
+    while True:
+        os.system("cls" if os.name == "nt" else "clear")
+        print(fade.pinkred(bann))
+        print("Do you want to watch a user by:")
+        print()
+        print(f"[{red}i{r}] - Instagram ID")
+        print(f"[{red}u{r}] - Instagram Username")
 
+        choice = input(f"{b}>{r} Enter your choice (i/u/): ").strip().lower()
+
+        if choice == 'i':
+            watch_id()
+        elif choice == 'u':
+            watch_user()        
+        else:
+         print(f"{red}Invalid choice Please select either (i/u){r}" )
 
 def login_easy():
     os.system("cls" if os.name == "nt" else "clear")
@@ -235,13 +323,13 @@ def login_easy():
         with open("user.txt", "r") as f:
             user_list = f.read().splitlines()
 
-    user = input("Instagram USER: ")
+    user = input(f"{b}>{r} Instagram USER: ")
     session_pathx = f"C:\\Users\\{getpass.getuser()}\\AppData\\Local\\Instaloader\\session-{user}"
     
     try:
         os.remove(session_pathx)
     except FileNotFoundError:
-        pass  # Session file doesn't exist, which is fine
+        pass 
     except Exception as e:
         print(f"Error deleting session file: {e}")
 
@@ -257,15 +345,15 @@ def menu():
     while True:
         os.system("cls" if os.name == "nt" else "clear")
         print(fade.pinkred(ban))
-        l = input(f"      > {user}: ")
+        l = input(f"      {red}>{r} {user}: ")
         if l.lower() == "1":
             user_info()
         elif l.lower() == "2":
             id_info()
         elif l.lower() == "3":
-            watch_user()
+            watch_menu()
         else:
-            print("[-] Invalid choice")
+            print(f"[{b}-{r}] {red}Invalid choice{r}")
 
 def main():
     menu()
