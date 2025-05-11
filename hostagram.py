@@ -1,4 +1,4 @@
-# code by ovax version 1.0
+# code by ovax version 1.1
 # best funk [ MONTAGEM BATCHI SLOWED ]
 
 import instaloader, fade, os
