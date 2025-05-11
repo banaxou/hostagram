@@ -29,8 +29,8 @@ I recommend creating a dedicated Instagram account for OSINT, This will allow yo
 Hostagram will never steal your passwords !!
 
 
+![image](https://github.com/user-attachments/assets/449ba447-314d-4d6f-8a7c-4a5835de03f9)
 
-![image](https://github.com/user-attachments/assets/eba7ab50-87f8-46c1-8a79-3932a724e2c9)
 
 ---
 
