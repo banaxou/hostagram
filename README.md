@@ -71,7 +71,9 @@ python hostagram.py
  # 🚀Roadmap 
 * v1.0: old version
 * v1.1: ‎Initial release
-* v1.2: soon
+* v1.2: soon more information user email and number phone !
+* v1.3: soon new page + new fonction !
+* v1.4: ??
 ---
 
 ## 🪷 Contribute
