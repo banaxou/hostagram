@@ -95,3 +95,8 @@ Your donations support my open source tools and major projects:
 
 [bc1pch0t574x0xpr6vad5ru0862kyw9le8qv2ja3ufdpnhz4hfcp54ksn2guqy](https://blockchair.com/bitcoin/address/bc1pch0t574x0xpr6vad5ru0862kyw9le8qv2ja3ufdpnhz4hfcp54ksn2guqy)
 ---
+‎### Sol
+‎
+‎<img src="https://cryptologos.cc/logos/solana-sol-logo.png" width="20">
+‎
+‎[BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
