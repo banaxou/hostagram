@@ -88,13 +88,6 @@ Your donations support my open source tools and major projects:
 [0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58](https://etherscan.io/address/0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58)
 
 ---
-
-### Bitcoin  
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" width="20"> 
-
-[bc1pch0t574x0xpr6vad5ru0862kyw9le8qv2ja3ufdpnhz4hfcp54ksn2guqy](https://blockchair.com/bitcoin/address/bc1pch0t574x0xpr6vad5ru0862kyw9le8qv2ja3ufdpnhz4hfcp54ksn2guqy)
----
 ‎### Sol
 ‎
 ‎<img src="https://cryptologos.cc/logos/solana-sol-logo.png" width="20">
