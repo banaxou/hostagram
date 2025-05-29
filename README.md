@@ -76,7 +76,7 @@ python hostagram.py
 * v1.4: ??
 ---
 
-## 🪷 Contribute
+## 🌸 Contribute
 
 **Feel free to open an issue or pull request to suggest improvements! ;)**
 
