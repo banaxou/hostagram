@@ -82,7 +82,7 @@ python hostagram.py
 
 Your donations support my open source tools and major projects:
 
-### Ethereum  
+<h1>Ethereum</h1>
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" width="20">  
 
 [0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58](https://etherscan.io/address/0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58)
