@@ -89,7 +89,6 @@ Your donations support my open source tools and major projects:
 
 ---
 ‎### Sol
-‎
 ‎<img src="https://cryptologos.cc/logos/solana-sol-logo.png" width="20">
 ‎
 ‎[BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
