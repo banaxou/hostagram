@@ -53,7 +53,7 @@ Monitors a profile in real time (by username or ID) and logs any changes to a fi
 ```bash
 git clone https://github.com/banaxou/hostagram
 cd hostagram
-pip install -r requirement.txt
+pip install -r requirements.txt
 python hostagram.py
 ```
 > 🛠️ Hostagram is in active development! This is version 1.2  even more upgrades are coming
