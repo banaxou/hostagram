@@ -2,4 +2,6 @@ instaloader
 getpass
 fade
 json
+pycountry 
+phonenumbers
 requests
