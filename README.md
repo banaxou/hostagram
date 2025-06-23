@@ -64,8 +64,8 @@ python hostagram.py
 
 - v1.0: old version
 - v1.1: initial release
-- v1.2: **NOW!** — Email, phone!
-- v1.3: soon — new UI + new functions
+- v1.2: **NOW!** Email, phone!
+- v1.3: soon new UI + new functions
 - v1.4: ??
 
 ---
