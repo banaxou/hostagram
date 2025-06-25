@@ -7,44 +7,30 @@
 
 **Hostagram** is a powerful OSINT tool for Instagram, designed to extract and monitor a maximum of information from any public (or accessible) Instagram account
 
----
+## 🚦 Before You Start
 
-## 💡 What’s New in 1.2?
-
-> **v1.2 brings the ultimate profile OSINT!**
->
-> - **Email and Phone Extraction:** Public email, public phone (+ country detection), and obfuscated (masked) info!
-> - **Profile Enrichment:** New fields such as WhatsApp linked, memorialized, HD profile pic, relationship to viewer, and more!
-> - **Multi-endpoint Fusion:** Uses both Instaloader and direct Instagram API for maximum info.
-> - **Improved CLI:** Cleaner menus, stylized output, enhanced error handling
-> - **Up to 30 distinct fields extracted per profile!**  
-> - **Still blazing fast & easy to use.**
+- **Create a dedicated Instagram account for OSINT**  
+  Some features require authentication
+- **Hostagram never steals your password**  
+- Use your own session ID for full access (public info only on private/locked accounts).
 
 ---
+
 
 ## 🕵️ Main Features
 
 ### 1. `user-info`  
-Extracts all available info from a profile by username and saves it as `.txt` and `.json`.  
+Extracts all available info from a profile by username and saves it as `.txt` and `.json`
 - Full name, username, ID
 - Bio, bio URL, hashtags, mentions
 - Followers, followees, number of posts
 - Business category, type (personal/business) and more!
 
 ### 2. `id-info`  
-Finds and displays info from a raw Instagram user ID, even if the username or profile picture changed, or if you’re blocked.
+Finds and displays info from a raw Instagram user ID even if the username or profile picture changed, or if you’re blocked
 
 ### 3. `watch-user`  
 Monitors a profile in real time (by username or ID) and logs any changes to a file as well as to the terminal
-
----
-
-## 🚦 Before You Start
-
-- **Create a dedicated Instagram account for OSINT!**  
-  Some features require authentication.  
-- **Hostagram never steals your password.**  
-- Use your own session ID for full access (public info only on private/locked accounts).
 
 ---
 
@@ -64,45 +50,43 @@ python hostagram.py
 
 - v1.0: old version
 - v1.1: initial release
-- v1.2: **NOW!** Email, phone!
-- v1.3: soon new UI + new functions
+- v1.2: **NOW!** user info : email phone 
+- v1.3: soon new page + new functions
 - v1.4: ??
 
 ---
 
 ## 📝 Example Output (fields extracted)
 
-| Field                    | Description                             |
-|--------------------------|-----------------------------------------|
-| Full Name                | Name on IG profile                      |
-| Username                 | @username                               |
-| ID                       | Instagram user ID                       |
-| Bio                      | Biography                               |
-| Bio URL                  | Link in bio                             |
-| Followers                | Count                                   |
-| Followees                | Count                                   |
-| Number of posts          | Count                                   |
-| Business Category        | If business account                     |
-| Type account             | Business / Personal                     |
-| Private account          | Yes/No                                  |
-| Verified account         | Yes/No                                  |
-| Memorialized             | Yes/No                                  |
-| WhatsApp linked          | Yes/No                                  |
-| HD Profile picture URL   | Direct HD link                          |
-| Public email             | If set                                  |
-| Public phone             | If set (+ country name)                 |
-| Obfuscated email         | Masked (if privacy settings)            |
-| Obfuscated phone         | Masked (if privacy settings)            |
-| Biography hashtags       | List                                    |
-| Biography mentions       | List                                    |
-| Follows viewer           | Yes/No                                  |
-| Followed by viewer       | Yes/No                                  |
-| Blocked by viewer        | Yes/No                                  |
-| Has highlight reels      | Yes/No                                  |
-| Profile picture URL      | Direct link                             |
-| Lookup message           | Info from IG API lookup                 |
-| ...                      | And more!                               |
-
+| Field                    | Value (Exemple)              |
+|--------------------------|------------------------------|
+| Full name                | Johnny go                    |
+| Username                 | @exemple                     |
+| ID                       | 123456789                    |
+| Bio                      | lifestyle • Art              |
+| Bio URL                  | https://exemple.com          |
+| Followees                | 342                          |
+| Followers                | 1500                         |
+| Number of posts          | 56                           |
+| Business category        | blog                         |  
+| Type account             | Business                     |  
+| Private account          | False                        |
+| Verified account         | False                        |
+| Has highlight reels      | True                         |
+| Biography hashtags       | #Photography                 |
+| Biography mentions       | @don_pollo @dio              |
+| Follows viewer           | False                        |
+| Followed by viewer       | True                         |
+| Blocked by viewer        | False                        |
+| Profile picture URL      | https://exemple.com/photo.jpg|
+| Memorialized             | False                        |
+| New to Instagram         | False                        |
+| WhatsApp linked          | False                        |
+| HD Profile picture URL   | https://exemple.com/hd.jpg   |
+| Public email             | contact@****.com             |  
+| Obfuscated email         | co****@m**s.com              |  
+| Obfuscated phone         | +** * ** ** ** 25            |
+| Lookup message           | "Success"                    |
 ---
 
 ## 🌸 Contribute
