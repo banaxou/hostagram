@@ -113,13 +113,15 @@ python hostagram.py
 
 ---
 
+
 ## 🌸 Contribute
 
-**Issues and PRs are welcome!**  
-Want to suggest an improvement or help with code? Open an issue or pull request!
+**Issues and PRs are welcome !**  
+Want to suggest an improvement or help with code? Open an issue or pull request 
+## 💬​ **Join r/veloxia | The OSINT & Dev Community**  
+[r/veloxia](https://www.reddit.com/r/veloxia/)
 
 ---
-
 ## ❤️ Donate
 
 Your support helps keep this tool alive and open source!
