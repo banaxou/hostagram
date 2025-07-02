@@ -21,7 +21,8 @@
 To begin, you need to log in with either a password or a session ID
 **If you connect using your session ID, you will have more access to information**
 
-![login_1 2](https://github.com/user-attachments/assets/c42746b3-3ea7-433b-9abd-e796f142c74d)
+![login-1 2V2](https://github.com/user-attachments/assets/54fc5677-df48-411d-8181-5974f6482081)
+
 
 Once you are in the main menu, you have three functions: `user-info` `id-info` and `watch-user`
 
