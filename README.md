@@ -27,7 +27,7 @@ To begin, you need to log in with either a password or a session ID
 Once you are in the main menu, you have three functions: `user-info` `id-info` and `watch-user`
 
 ### 1 👤​ User Info
-![image](https://github.com/user-attachments/assets/630727a4-2d44-4d60-bf8c-5fa2083a0086)  
+ ![user_info1 2](https://github.com/user-attachments/assets/06aeee7f-518c-487a-b3f2-3bcbb3a56e0c)
 **Enter Instagram username**  
 This feature allows you to retrieve a lot of information about an Instagram profile, such as:
 - Username
