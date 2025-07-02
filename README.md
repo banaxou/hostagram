@@ -47,7 +47,7 @@ This function uses the session ID for more information on the ID
 The data is saved in both 'json' and 'txt'
 
 ### 3 🔎​ Watch User
-![image](https://github.com/user-attachments/assets/624a1889-d0bb-414a-a2b5-b36d2b5ffc3f)
+![warch-user1 2](https://github.com/user-attachments/assets/0248c8cb-8223-4d52-baf7-d5f1729b5c8b)
 
 This function allows you to receive real-time activity updates from the account: follow/unfollow, new posts, new username, and more. 
 You can check if the account is active 
