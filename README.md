@@ -40,7 +40,7 @@ This feature allows you to retrieve a lot of information about an Instagram prof
 The data is saved in both 'json' and 'txt'
 
 ### 2 🆔​ ID Info
-![image](https://github.com/user-attachments/assets/8fefea5d-e992-4ae5-a13e-d523397490d8)  
+![id_info1 2](https://github.com/user-attachments/assets/5f33d090-6288-4b1d-8183-73403a6ebaef)
 **Enter user ID**  
 If you have lost access to your target's Instagram account, or if your target has changed their username or blocked you, you can always find the account using their ID
 This function uses the session ID for more information on the ID
