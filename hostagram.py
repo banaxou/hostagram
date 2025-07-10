@@ -477,7 +477,7 @@ def login_easy():
             
             with open("sessionid.txt", "w") as f:
                     f.write(session)
-          break
+                    break
             print("Invalid choice Please enter 'p' or 's'")
             time.sleep(1)
 
