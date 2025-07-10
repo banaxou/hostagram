@@ -472,12 +472,12 @@ def login_easy():
             session = input(f"{red}>{r} Enter session ID: ").strip()
             ig.context._session.cookies.set("sessionid", session)
             profile = instaloader.Profile.from_username(ig.context, uzer)
-            print(f"✅ Successfully logged in as: {profile.username}")
+            print(f" Successfully logged in as: {profile.username}")
              
             
             with open("sessionid.txt", "w") as f:
                     f.write(session)
-                    break
+          break
             print("Invalid choice Please enter 'p' or 's'")
             time.sleep(1)
 
