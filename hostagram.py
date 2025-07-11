@@ -7,6 +7,7 @@ import getpass
 import pycountry
 import json
 import requests
+import base64
 from datetime import datetime
 from urllib.parse import quote_plus
 from json import dumps, decoder
@@ -14,9 +15,7 @@ import phonenumbers
 from phonenumbers.phonenumberutil import region_code_for_country_code
 
 
-
-
-v = "v1.2"  
+v = "v1.2.1"  
 q = "https://github.com/banaxou/"
 white = "\033[97m"
 red = "\033[91m"
@@ -128,16 +127,17 @@ def lookup(username):
 def user_info():
     ig = instaloader.Instaloader()
     w = 50
-    red = "\033[1;31m"
-    r = "\033[0m"
     b = "\033[1;34m"
 
     session_file = "sessionid.txt"
     session_id = ""
-    if os.path.exists(session_file):
-        with open(session_file, "r") as f:
-            session_id = f.read().strip()
 
+    if os.path.exists(session_file):
+     with open(session_file, "r") as f:
+        encoded_data = f.read().strip()
+        decoded_bytes = base64.b64decode(encoded_data)
+        session_id = decoded_bytes.decode("utf-8")
+        
     ins = input(f"{red}>{r} Enter Instagram username: ") or "zuck"
 
     try:
@@ -221,7 +221,7 @@ def user_info():
         print(f"{red}Unexpected error{r}: {e}")
 
 
-def id_info():
+def id_info(): 
     session_file = "sessionid.txt"
     x = 50
 
@@ -232,9 +232,12 @@ def id_info():
         session_id = "" 
 
     if not session_id:
-        session_id = input(f"{b}>{r} Enter your session ID: ").strip()
+        session_id = input(f"{b}>{r} Enter your session ID: ").strip() 
+        te = session_id.encode("utf-8")
+        b6 = base64.b64encode(te) 
+        bb = b6.decode("utf-8")
         with open(session_file, "w") as f:
-            f.write(session_id) 
+            f.write(bb) 
         
     idx = input(f"{red}>{r} Enter Instagram ID: ").strip() or "314216"
 
@@ -320,8 +323,11 @@ def watch_id():
 
     if not session_id:
         session_id = input(f"{b}>{r} Enter your session ID: ").strip()
+        te = session_id.encode("utf-8")
+        b6 = base64.b64encode(te) 
+        bb = b6.decode("utf-8")
         with open(session_file, "w") as f:
-            f.write(session_id)
+            f.write(bb)
 
     idx = input(f"{red}>{r}Enter Instagram ID: ").strip() or "314216"
 
@@ -470,13 +476,15 @@ def login_easy():
             ig = instaloader.Instaloader()  
             uzer = input(f"{red}>{r} Enter username: ").strip()
             session = input(f"{red}>{r} Enter session ID: ").strip()
+            te = session.encode("utf-8")
+            b6 = base64.b64encode(te) 
+            bb = b6.decode("utf-8")
             ig.context._session.cookies.set("sessionid", session)
             profile = instaloader.Profile.from_username(ig.context, uzer)
             print(f" Successfully logged in as: {profile.username}")
              
-            
             with open("sessionid.txt", "w") as f:
-                    f.write(session)
+                    f.write(bb)
                     break
             print("Invalid choice Please enter 'p' or 's'")
             time.sleep(1)
