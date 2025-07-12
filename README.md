@@ -76,7 +76,7 @@ python hostagram.py
 - v1.1: initial release
 - v1.2: **NOW!** user info: email, phone
 - termux-1.0: **coming soon**
-- v1.3: coming soon — new page + new functions
+- v1.3: coming soon — new page + new functions big update !!!!!! 
 # 1.3 preview 
 ![preview-1-3hostagram](https://github.com/user-attachments/assets/f22abd7a-eae8-445d-a99e-0dd8eefb2130)
 - v1.4: ??
