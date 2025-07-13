@@ -66,7 +66,7 @@ pip install -r requirements.txt
 python hostagram.py
 ```
 
-> 🛠️ Hostagram is in active development. This is version 1.2 even more upgrades are coming!
+> 🛠️ Hostagram is in active development. This is version 1.2 even more upgrades are coming ! The final version of Hostagram will be 3.0 
 
 ---
 
