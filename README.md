@@ -141,6 +141,6 @@ Your support helps keep this tool alive and open source!
 
 [BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
 
-> **Hostagram 1.2**
+> **Hostagram 1.2.1**
 ---
 
