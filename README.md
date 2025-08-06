@@ -1,4 +1,4 @@
-# 🔴 Hostagram 1.2.1 | The Instagram OSINT Tool
+# 🔴 Hostagram 1.2.1 | The Instagram OSINT Tool (1.3 august 10)
 # hostagram termux version coming soon !
 <a href="https://github.com/banaxou/hostagram/"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge" /></a>
 
