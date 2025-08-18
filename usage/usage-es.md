@@ -1,6 +1,6 @@
 # 📖 Documentación Auxiliar  
-- 👉 https://jinversor.co/2025/07/hostagram/  
-- 👉 https://esgeeks.com/hostagram-herramienta-osint/  
+- 👉 https://jinversor.co/2025/07/hostagram/  1.2
+- 👉 https://esgeeks.com/hostagram-herramienta-osint/  1.0
 
 # 🎥 Tutorial 1.1  
 👉 https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V  
