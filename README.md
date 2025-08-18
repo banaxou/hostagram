@@ -1,12 +1,11 @@
-# 🔴 Hostagram 1.2.1 | The Instagram OSINT Tool 
-# hostagram termux version coming soon !
+# 🔴 Hostagram 1.3 | Instagram OSINT Tool 
 <a href="https://github.com/banaxou/hostagram/"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge" /></a>
 
 <a href="https://github.com/banaxou/hostagram/network/members"><img src="https://img.shields.io/github/forks/banaxou/hostagram" alt="Forks Badge" /></a>
 
 ![banner](https://github.com/user-attachments/assets/72532e05-2bc1-43e0-9410-a049e7716660)
 
-**Hostagram** is a powerful OSINT tool for Instagram, designed to extract and monitor as much information as possible from any public (or accessible) Instagram account
+> **Hostagram is a powerful OSINT tool for Instagram, designed to extract and monitor as much information as possible from any public (or accessible) Instagram account**
 
 ## 🚦 Before You Start
 
@@ -17,56 +16,21 @@
 
 ---
 
-## 🕵️ Hostagram Tutorial
+## 📍​ usage hostagram
+> *[french-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-fr.md)*
 
-To begin, you need to log in with either a password or a session ID
-**If you connect using your session ID, you will have more access to information**
-
-![login-1 2V2](https://github.com/user-attachments/assets/54fc5677-df48-411d-8181-5974f6482081)
+> *[english-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-en.md)*
 
 
-Once you are in the main menu, you have three functions: `user-info` `id-info` and `watch-user`
+> *[spanish-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-es.md)*
 
-### 1 👤​ User Info
- ![user_info1 2](https://github.com/user-attachments/assets/06aeee7f-518c-487a-b3f2-3bcbb3a56e0c)
-**Enter Instagram username**  
-This feature allows you to retrieve a lot of information about an Instagram profile, such as:
-- Username
-- Followees
-- Followers
-- ID
-- BIO
-- Public email or obfuscated email
-- Obfuscated phone and more  
-The data is saved in both 'json' and 'txt'
+> **🛠️ Hostagram is in active development. This is version 1.3 even more upgrades are coming ! The final version of Hostagram will be 3.0**
 
-### 2 🆔​ ID Info
-![id_info1 2](https://github.com/user-attachments/assets/5f33d090-6288-4b1d-8183-73403a6ebaef)
-**Enter user ID**  
-If you have lost access to your target's Instagram account, or if your target has changed their username or blocked you, you can always find the account using their ID
-This function uses the session ID for more information on the ID
-The data is saved in both 'json' and 'txt'
 
-### 3 🔎​ Watch User
-![warch-user1 2](https://github.com/user-attachments/assets/0248c8cb-8223-4d52-baf7-d5f1729b5c8b)
 
-This function allows you to receive real-time activity updates from the account: follow/unfollow, new posts, new username, and more. 
-You can check if the account is active 
-You can choose to monitor the profile by either user ID or username
-The data is saved in both 'json' and 'txt' 
+## ⭐ *Star stats*
 
----
-
-## 💻 Installation
-
-```bash
-git clone https://github.com/banaxou/hostagram
-cd hostagram
-pip install -r requirements.txt
-python hostagram.py
-```
-
-> 🛠️ Hostagram is in active development. This is version 1.2 even more upgrades are coming ! The final version of Hostagram will be 3.0 
+[![Star History Chart](https://api.star-history.com/svg?repos=banaxou/hostagram&type=Date&theme=dark)](https://www.star-history.com/#banaxou/hostagram&Date)
 
 ---
 
@@ -74,12 +38,12 @@ python hostagram.py
 
 - v1.0: old version
 - v1.1: initial release
-- v1.2: **NOW!** user info: email, phone
-- termux-1.0: **coming soon**
-- v1.3: coming soon - new page + new functions big update !!!!!! 
-# 1.3 preview 
-![preview-1-3hostagram](https://github.com/user-attachments/assets/f22abd7a-eae8-445d-a99e-0dd8eefb2130)
-- v1.4: ??
+- v1.2:  user info: email, phone
+- v1.3: **now big update !  new page + new UI design + id info more info + watch id boosted +  new functions (email check | phone check | user check)**
+- termux-1.0: *coming soon*
+- v1.4: ?? december
+- v1.5: ??
+- v2.0: ?? 
 
 ---
 
@@ -141,6 +105,5 @@ Your support helps keep this tool alive and open source!
 
 [BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
 
-> **Hostagram 1.2.1**
+> **Hostagram 1.3**
 ---
-
