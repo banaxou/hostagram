@@ -1,26 +1,34 @@
-# code by ovax version 1.2.1
-# best funk [ MONTAGEM BATCHI SLOWED ]
+# code by ovax version 1.3
+# best funk [ MONTAGEM BATCHI SLOWED and VAI NO VAPOR SLOWED]
 
-import instaloader, fade,os
+import instaloader, fade, os
 import time
 import getpass
 import pycountry
 import json
-import requests
+import hmac
+import hashlib
+import urllib.parse
+import httpx
+import asyncio
 import base64
+import requests
 from datetime import datetime
 from urllib.parse import quote_plus
 from json import dumps, decoder
 import phonenumbers
 from phonenumbers.phonenumberutil import region_code_for_country_code
 
-
-v = "v1.2.1"  
+apix = 'https://i.instagram.com/api/v1/users/lookup/'
+sig_key = '4'
+KEY = 'e6358aeede676184b9fe702b30f4fd35e71744605e39d2181a34cede076b3c33'
+v = "v1.3"
 q = "https://github.com/banaxou/"
 white = "\033[97m"
-red = "\033[91m"
 b = "\033[94m"
+g = "\033[92m"
 r = "\033[0m"
+R = "\033[91m"
 
 bann = """
           .__                   __                                         
@@ -34,12 +42,32 @@ ban = fr"""
           code by ovax {v}  
        {fade.greenblue(q)} 
           .__                   __                                         {white}╔                ╗ {white}
-          |  |__   ____  ______/  |______    ________________    _____        1: user info 
+          |  |__   ____  ______/  |______    ________________    _____        [1] user info 
           |  |  \ /  _ \/  ___|   __\__  \  / ___\_  __ \__  \  /     \         
-          |   Y  (  <_> )___ \ |  |  / __ \/ /_/  >  | \// __ \|  Y Y  \      2: id info 
+          |   Y  (  <_> )___ \ |  |  / __ \/ /_/  >  | \// __ \|  Y Y  \      [2] id info 
           |___|  /\____/____  >|__| (____  |___  /|__|  (____  /__|_|  /
-               \/           \/           \/_____/            \/      \/       3: watch user 
-                                                                          {white}╚                  ╝{white}
+               \/           \/           \/_____/            \/      \/       [3] watch user 
+                                                                           {white}╚                ╝{white}
+                                                                                                    {R}>{r} 4 new page
+"""
+ban2 = fr"""code by ovax  {v}
+{fade.greenblue(q)}
+
+
+                                 .__                   __                                     
+                                 |  |__   ____  ______/  |______    ________________    _____
+                                 |  |  \ /  _ \/  ___|   __\__  \  / ___\_  __ \__  \  /     \
+                                 |   Y  (  <_> )___ \ |  |  / __ \/ /_/  >  | \// __ \|  Y Y  \
+                                 |___|  /\____/____  >|__| (____  |___  /|__|  (____  /__|_|  /
+                                      \/           \/           \/_____/            \/      \/
+
+   ┌─────────────────────────────────────────[ hostagram {v} ]──────────────────────────────────────────┐
+   │ [5]  Phone Number      ::  soon                                                                     │
+   │ [6]  Email             ::  soon                                                                     │
+   │ [7]  user Check        ::  soon                                                                     │
+   └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+  {R}<{r} 8 menu
 """
 
 loginz = fr"""
@@ -53,7 +81,116 @@ loginz = fr"""
 
           version {v}     === LOGIN INSTAGRAM ===  
           code by ovax 
- """
+"""
+
+
+async def datax(query):
+    def generate_sig(data):
+        return 'ig_sig_key_version=' + sig_key + '&signed_body=' + hmac.new(
+            KEY.encode('utf-8'),
+            data.encode('utf-8'),
+            hashlib.sha256
+        ).hexdigest() + '.' + urllib.parse.quote_plus(data)
+
+    def cook_data(q):
+        return {
+            'login_attempt_count': '0',
+            'directly_sign_in': 'true',
+            'source': 'default',
+            'q': q,
+            'ig_sig_key_version': sig_key
+        }
+
+    async with httpx.AsyncClient(timeout=15.0) as client:
+        data = generate_sig(json.dumps(cook_data(query)))
+        headers = {
+            "Accept-Language": "en-US",
+            "User-Agent": "Instagram 101.0.0.15.120",
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept-Encoding": "gzip, deflate",
+            "X-FB-HTTP-Engine": "Liger",
+            "Connection": "close"
+        }
+        try:
+            r = await client.post(apix, headers=headers, data=data)
+            rep = r.json()
+            if "message" in rep and rep["message"] == "No users found":
+                return False
+            else:
+                return True
+        except Exception as e:
+            print(f"[{R}!{r}] {R}Error during verification {r}: {e}")
+            return False
+def datax_user():
+    p = input(f"{R}>{r} Enter username:  ").strip()
+    if not p:
+        print(f"{R}Empty username{r}")
+        time.sleep(1)
+        return
+    try:
+        exists = asyncio.run(datax(p))
+        if exists:
+            print(f"[{g}+{r}] {p} is associated with Instagram")
+        else:
+            print(f"[{R}-{r}] {p} is not associated with any Instagram account")
+    except Exception as ex:
+        print(f"[{R}!{r}] Error: {ex}")
+    input("Press Enter to continue...")
+
+def datax_email():
+    e = input(f"{R}>{r} Enter email: ").strip().replace(" ", "")
+    if not e:
+        print(f"{R}Empty email{r}")
+        time.sleep(1)
+        return
+    try:
+        exists = asyncio.run(datax(e))
+        if exists:
+            print(f"[{g}+{r}] True {e} is associated with Instagram")
+        else:
+            print(f"[{R}-{r}] {e} is not associated with any Instagram account")
+    except Exception as ex:
+        print(f"[{R}!{r}] {R} Error {r}: {ex}")
+    input("Press Enter to continue...")
+
+def datax_phone():
+    p = input(f"{R}>{r} Enter phone number (with country code +xx xxxxxxxxxx): ").strip()
+    if not p:
+        print(f"{R}Empty phone number{r}")
+        time.sleep(1)
+        return
+    try:
+        exists = asyncio.run(datax(p))
+        if exists:
+            print(f"[{g}+{r}] {p} is associated with Instagram")
+        else:
+            print(f"[{R}-{r}] {p} is not associated with any Instagram account")
+    except Exception as ex:
+        print(f"[{R}!{r}] Error: {ex}")
+    input("Press Enter to continue...")
+
+def menu_2():
+    while True:
+        os.system("cls" if os.name == "nt" else "clear")
+        u = getpass.getuser()
+        print(fade.purplepink(ban2))
+        w = input(f"{R}>{r} {u}: ").strip()
+
+        if w == "5":
+            datax_phone()  # Phone Number
+        elif w == "6":
+            datax_email()  # Email
+        elif w == "7":
+            datax_user()  # User check
+        elif w == "8":
+            try:
+                menu()
+            except NameError:
+                input("Press Enter to continue...")
+            break
+        else:
+            print(f"[{r}-{r}] {R}Invalid choice{r}")
+            time.sleep(1)
 
 def getUserId(username, sessionId):
     headers = {
@@ -126,20 +263,18 @@ def lookup(username):
 
 def user_info():
     ig = instaloader.Instaloader()
-    w = 50
+    red = "\033[1;31m"
+    r = "\033[0m"
     b = "\033[1;34m"
 
     session_file = "sessionid.txt"
     session_id = ""
-
     if os.path.exists(session_file):
-     with open(session_file, "r") as f:
-        encoded_data = f.read().strip()
-        decoded_bytes = base64.b64decode(encoded_data)
-        session_id = decoded_bytes.decode("utf-8")
-        
-    ins = input(f"{red}>{r} Enter Instagram username: ") or "zuck"
+        with open(session_file, "r") as f:
+            session_id = f.read().strip()
 
+    ins = input(f"{red}>{r} Enter Instagram username: ") or "zuck"
+    os.system("cls" if os.name == "nt" else "clear")
     try:
         ig.context._session.cookies.set("sessionid", session_id)
 
@@ -197,11 +332,16 @@ def user_info():
                 "Lookup message": u.get("message")
             })
 
-        print(f"╔{'═' * w}╗")
+        
+        title = f"[ {red}User info{r} ]"
+        line = "─" * (45 - len(title)//2)
+        print("")
+        print(f"┌{line}{title}{line}┐")
+        print("")
         for key, value in info.items():
             print(f" {red}{key}{r}: {value}")
-        print(f"╚{'═' * w}╝")
-        input(f"{red}>{r} Press Enter to save...")
+        print("")
+        input(f"└{'─' * (len(line)*2 + len(title))}┘")
 
         file_txt = f"{ins}.txt"
         with open(file_txt, "w", encoding="utf-8") as f_txt:
@@ -211,7 +351,7 @@ def user_info():
         xjson = f"{ins}.json"
         with open(xjson, "w", encoding="utf-8") as jsson:
             json.dump(info, jsson, ensure_ascii=False, indent=4)
-
+        print("")
         print(f"{b}Data has been saved to {file_txt} and {xjson}{r}")
         time.sleep(2)
 
@@ -220,50 +360,83 @@ def user_info():
     except Exception as e:
         print(f"{red}Unexpected error{r}: {e}")
 
+def id_info():
+    s = instaloader.Instaloader()
+    R = "\033[1;31m"
+    r = "\033[0m"
+    b = "\033[1;34m"
 
-def id_info(): 
-    session_file = "sessionid.txt"
-    x = 50
+    user_id = input(f"{R}>{r} Enter Instagram ID: ") or "176702683"
 
-    if os.path.exists(session_file):
-        with open(session_file, "r") as f:
-            session_id = f.read().strip()
-    else:
-        session_id = "" 
-
-    if not session_id:
-        session_id = input(f"{b}>{r} Enter your session ID: ").strip() 
-        te = session_id.encode("utf-8")
-        b6 = base64.b64encode(te) 
-        bb = b6.decode("utf-8")
-        with open(session_file, "w") as f:
-            f.write(bb) 
-        
-    idx = input(f"{red}>{r} Enter Instagram ID: ").strip() or "314216"
-
+    url = f"https://i.instagram.com/api/v1/users/{user_id}/info/"
     headers = {
-        "User-Agent": "Instagram 219.0.0.12.117 Android",
-        "Cookie": f"sessionid={session_id}",
-        "Accept": "*/*",
+        "User-Agent": "Instagram 76.0.0.15.395 Android (24/7.0; 640dpi; 1440x2560; samsung; SM-G930F; en_US)",
     }
 
-    url = f"https://i.instagram.com/api/v1/users/{idx}/info/"
-    res = requests.get(url, headers=headers)
+    try:
+        res = requests.get(url, headers=headers)
 
-    if res.status_code == 200:
-        data = res.json().get('user', {})
+        if res.status_code == 200:
+            data = res.json()
+            username = data.get("user", {}).get("username")
 
-        print(f"╔{'═' * x}╗")
-        print(f" {red}Username{r}: {data.get('username', 'N/A')}")
-        print(f" {red}Show IG App Switcher Badge{r}: {data.get('show_ig_app_switcher_badge', 'N/A')}")
-        print(f" {red}ID{r}: {data.get('id', 'N/A')}")
-        print()
-        input(f"╚{'═' * x}╝")
-    else:
-        print(f"Error {res.status_code}: {res.text}")
+            if username:
+                try:
+                    profile = instaloader.Profile.from_username(s.context, username)
 
-def truc_la(info):
+                    info = {
+                        "ID": user_id,
+                        "Username": profile.username,
+                        "Full name": profile.full_name,
+                        "Bio": profile.biography,
+                        "Followers": profile.followers,
+                        "Followees": profile.followees,
+                        "Number of posts": profile.mediacount,
+                        "Private account": profile.is_private,
+                        "Verified account": profile.is_verified,
+                        "Profile picture URL": profile.profile_pic_url,
+                    }
+                    os.system("cls" if os.name == "nt" else "clear")
+                    title = f"[ {R}ID info{r} ]"
+                    line = "─" * (45 - len(title)//2)
+                    print("")
+                    print(f"┌{line}{title}{line}┐")
+                    print("")
+                    for key, value in info.items():
+                        print(f" {R}{key}{r}: {value}")
+                    print("")
+                    input(f"└{'─' * (len(line)*2 + len(title))}┘")
+
+                    file_txt = f"{username}_id.txt"
+                    with open(file_txt, "w", encoding="utf-8") as f_txt:
+                        for key, value in info.items():
+                            f_txt.write(f"{key}: {value}\n")
+
+                    xjson = f"{username}_id.json"
+                    with open(xjson, "w", encoding="utf-8") as jsson:
+                        json.dump(info, jsson, ensure_ascii=False, indent=4)
+
+                    print("")
+                    print(f"{b}Data has been saved to {file_txt} and {xjson}{r}")
+                    time.sleep(2)
+
+                except Exception as e:
+                    print(f"{R}Error Instaloader{r}: {e}")
+            else:
+                print(f"{R}Error{r}: Username not found")
+        else:
+            print(f"{R}HTTP Error{r}: {res.status_code}")
+
+    except Exception as e:
+        print(f"{R}Unexpected error{r}: {e}")
+
+def decox(info):
     r = "\033[0m"
+    bold = "\033[1m"
+    gray = "\033[90m"
+    blue = "\033[94m"
+    yellow = "\033[93m"
+    white = "\033[97m"
 
     try:
         width = os.get_terminal_size().columns
@@ -273,111 +446,150 @@ def truc_la(info):
     def center(text, w=width):
         return text.center(w)
 
-    def separator(char="─", w=None): # Fonction faite par IA pour la séparation "oui j'avais la flemme mais tu va me dit mais un dev n'a jamais la flemme ?" à bas écoute je faite pas de l'ascii art == trop complexe
+    def separator(char="─", w=None, color=white):
         try:
             w = os.get_terminal_size().columns if w is None else w
         except:
             w = 80
-        return f"{red}{char * w}{r}"
+        return color + char * w + r
 
-    print()
-    print(separator("═"))
-    print(center(" INSTAGRAM PROFILE VIEWER "))
-    print(separator("═"))
+    os.system("cls" if os.name == "nt" else "clear")
 
-    # Header
-    print()
-    print(center(f"{info['Full name']}  ({info['Type account']}) {'VERIFIED' if info['Verified'] == 'Yes' else ''}"))
-    print(center(f"@{info['Username']}  |  ID: {info['ID']}"))
-    print(center(f"[{'PRIVATE' if info['Private account'] == 'Private' else 'PUBLIC'} ACCOUNT]"))
-    print()
+    # Effet d'apparition
+    title = "INSTAGRAM PROFILE"
+    print(separator("═", color=blue))
+    print(center(bold + white + title + r))
+    print(separator("═", color=blue))
+    time.sleep(0.2)
 
-    # Followers / Followees / Posts
-    print(separator("─"))
-    print(center(f"Followers: {info['Followers']}   |   Following: {info['Followees']}   |   Posts: {info['Number of posts']}"))
-    print(separator("─"))
+    # Nom complet + type + vérification
+    full_name = info.get('Full name', 'N/A')
+    account_type = info.get('Type account', 'N/A')
+    verified = f"{blue}✔ VERIFIED{r}" if info.get('Verified account', 'No') == 'Yes' or info.get('Verified', 'No') == 'Yes' else ""
+    print(center(f"{bold}{full_name}{r} {gray}({account_type}){r} {verified}"))
+    time.sleep(0.1)
 
-    # Bio & URL
-    print()
-    if info['Bio']:
-        print(center(f"\"{info['Bio']}\""))
-    if info['Bio URL']:
-        print(center(f"Link: {info['Bio URL']}"))
+    # Username + ID
+    print(center(f"{yellow}@{info.get('Username', 'N/A')}{r}  {gray}|{r}  ID: {info.get('ID', 'N/A')}"))
+    time.sleep(0.1)
 
-    print()
+    # Privacy
+    privacy = f"{yellow}PRIVATE ACCOUNT{r}" if info.get('Private account', False) else f"{blue}PUBLIC ACCOUNT{r}"
+    print(center(f"[{privacy}]"))
+    time.sleep(0.1)
 
-    # Extra Info
-    print(separator("─"))
-    print(center(f"Category: {info['Business category']}"))
-    print(center(f"Highlights available: {info['Highlight reels']}"))
-    print(separator("═"))# end code IA
+    print(separator("─", color=gray))
+
+    followers = info.get('Followers', 'N/A')
+    followees = info.get('Followees', 'N/A')
+    posts = info.get('Number of posts', 'N/A')
+    stats_line = f"{white}Followers: {yellow}{followers}{r}   {gray}|{r}   {white}Following: {yellow}{followees}{r}   {gray}|{r}   {white}Posts: {yellow}{posts}{r}"
+    print(center(stats_line))
+    time.sleep(0.1)
+
+    print(separator("─", color=gray))
+
+    # Bio
+    if info.get('Bio'):
+        print()
+        print(center(f"{gray}\"{white}{info['Bio']}{gray}\"{r}"))
+        time.sleep(0.1)
+    if info.get('Bio URL'):
+        print(center(f"{blue}{info['Bio URL']}{r}"))
+        print()
+        time.sleep(0.1)
+
+    # Extra
+    print(separator("─", color=gray))
+    print(center(f"{white}Category: {yellow}{info.get('Business category', 'N/A')}{r}"))
+    print(center(f"{white}Highlights available: {yellow}{info.get('Has highlight reels', info.get('Highlight reels', 'N/A'))}{r}"))
+    print(separator("═", color=blue))
 
 def watch_id():
-    session_file = "sessionid.txt"
+    R = "\033[1;31m"
+    r = "\033[0m"
+    ig = instaloader.Instaloader()
+    idx = input(f"{R}>{r} Enter Instagram ID: ") or "314216"
+    log_file = f"{idx}_log.txt"
 
-    if os.path.exists(session_file):
-        with open(session_file, "r") as f:
-            session_id = f.read().strip()
-    else:
-        session_id = ""
+    def log_info(info_dict):
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(f"\n=== {datetime.now()} ===\n")
+            for key, value in info_dict.items():
+                f.write(f"{key}: {value}\n")
+            f.write("\n")
 
-    if not session_id:
-        session_id = input(f"{b}>{r} Enter your session ID: ").strip()
-        te = session_id.encode("utf-8")
-        b6 = base64.b64encode(te) 
-        bb = b6.decode("utf-8")
-        with open(session_file, "w") as f:
-            f.write(bb)
-
-    idx = input(f"{red}>{r}Enter Instagram ID: ").strip() or "314216"
-
+    url = f"https://i.instagram.com/api/v1/users/{idx}/info/"
     headers = {
-        "User-Agent": "Instagram 219.0.0.12.117 Android",
-        "Cookie": f"sessionid={session_id}",
-        "Accept": "*/*",
+        "User-Agent": "Instagram 76.0.0.15.395 Android (24/7.0; 640dpi; 1440x2560; samsung; SM-G930F; en_US)",
     }
 
     while True:
         try:
-            url = f"https://i.instagram.com/api/v1/users/{idx}/info/"
+            # Fetch username from Instagram API
             res = requests.get(url, headers=headers)
-
             if res.status_code == 200:
-                data = res.json().get('user', {})
-                os.system("cls" if os.name == "nt" else "clear")
-
-                def separator(char="═", width=80): # Fonction faite par IA pour la séparation
-                    return char * width
-
-                def center(text, width=80):
-                    return text.center(width)
-                
-                print("\033[1;34m" + separator() + "\033[0m")
-                print("\033[1;34m" + center(" INSTAGRAM PROFILE VIEWER ") + "\033[0m")
-                print("\033[1;34m" + separator() + "\033[0m")
-                print()
-                print(center(f"Username: \033[1;33m{data.get('username', 'N/A')}\033[0m"))
-                print(center(f"ID: \033[1;33m{data.get('id', 'N/A')}\033[0m"))
-                print()
-                print(separator("─"))
-                print(center(f"Profile Picture URL: \033[1;33m{data.get('profile_pic_url', 'N/A')}\033[0m"))
-                print(center(f"Show IG App Switcher Badge: \033[1;33m{data.get('show_ig_app_switcher_badge', 'N/A')}\033[0m"))
-                print(separator("═"))
-                print()
+                data = res.json()
+                username = data.get("user", {}).get("username")
+                if not username:
+                    print(f"{R}Error: Username not found for ID '{idx}'{r}")
+                    break
             else:
-                print(f"\033[1;31mError {res.status_code}:\033[0m {res.text}")
+                print(f"{R}HTTP Error: {res.status_code}{r}")
                 break
 
+            # Step 2: Use instaloader to fetch detailed profile info
+            try:
+                profile = instaloader.Profile.from_username(ig.context, username)
+                info = {
+                    "ID": idx,
+                    "Username": profile.username,
+                    "Full name": profile.full_name,
+                    "Bio": profile.biography,
+                    "Bio URL": profile.external_url,
+                    "Followees": profile.followees,
+                    "Followers": profile.followers,
+                    "Number of posts": profile.mediacount,
+                    "Business category": profile.business_category_name or "None",
+                    "Type account": 'Business' if profile.is_business_account else 'Personal',
+                    "Private account": "Private" if profile.is_private else "Public",
+                    "Verified": "Yes" if profile.is_verified else "No",
+                    "Has highlight reels": "Yes" if profile.has_highlight_reels else "No",
+                    "Profile picture URL": profile.profile_pic_url,
+                }
+
+                os.system("cls" if os.name == "nt" else "clear")
+                print(f"{white}[{datetime.now()}] Profile update for ID {idx}: {username}{r}")
+                decox(info)
+                log_info(info)
+
+            except instaloader.exceptions.ProfileNotExistsException:
+                print(f"{R}Error: Profile with username '{username}' not found{r}")
+                break
+            except instaloader.exceptions.ConnectionException as e:
+                print(f"{R}Connection error: {e}{r}")
+                break
+            except Exception as e:
+                print(f"{R}Unexpected error: {e}{r}")
+                break
+
+        except requests.exceptions.RequestException as e:
+            print(f"{R}Request error: {e}{r}")
+            break
         except Exception as e:
-            print(f"\033[1;31mError:\033[0m {e}")
+            print(f"{R}Unexpected error: {e}{r}")
             break
 
-        time.sleep(10) # end code by IA
-        
+        try:
+            time.sleep(20)  # Wait 20 seconds
+        except KeyboardInterrupt:
+            print(f"{R}Stopped by user{r}")
+            break
+
 def watch_user():
     ig = instaloader.Instaloader()
 
-    ins = input(f"{red}>{r} Enter Instagram username: ") or "zuck"
+    ins = input(f"{R}>{r} Enter Instagram username: ") or "zuck"
     log_file = f"{ins}_log.txt"
 
     def log_info(info_dict):
@@ -404,22 +616,22 @@ def watch_user():
                 "Type account": 'Business' if user.is_business_account else 'Personal',
                 "Private account": "Private" if user.is_private else "Public",
                 "Verified": "Yes" if user.is_verified else "No",
-                "Highlight reels": "Yes" if user.has_highlight_reels else "No",
+                "Has highlight reels": "Yes" if user.has_highlight_reels else "No",
                 "Profile picture URL": user.profile_pic_url,
             }
 
-            os.system("cls" if os.name == "nt" else "clear")  
+            os.system("cls" if os.name == "nt" else "clear")
             print(f"{white}[{datetime.now()}] Profile update: {ins}{r}")
-            truc_la(info)
+            decox(info)
             log_info(info)
 
         except instaloader.exceptions.ProfileNotExistsException:
-            print(f"{red}Error : profile '{ins}' not found{r}")
+            print(f"{R}Error : profile '{ins}' not found{r}")
             break
         except Exception as e:
-            print(f"{red}Error : {e}{r}")
+            print(f"{R}Error : {e}{r}")
 
-        time.sleep(15)  # 15s  plus chill que 5s pour eviter les ban api ou active un vpn ou proxy
+        time.sleep(20)  # 20s plus chill que 5s pour eviter les ban api ou active un vpn ou  add un proxy
 
 def watch_menu():
     while True:
@@ -427,19 +639,21 @@ def watch_menu():
         print(fade.pinkred(bann))
         print("Do you want to watch a user by:")
         print()
-        print(f"[{red}i{r}] - Instagram ID")
-        print(f"[{red}u{r}] - Instagram Username")
+        print(f"[{R}i{r}] - Instagram ID")
+        print(f"[{R}u{r}] - Instagram Username")
+        print(f'[{R}m{r}] - menu')
 
-        choice = input(f"{b}>{r} Enter your choice (i|u): ").strip().lower()
+        choice = input(f"{b}>{r} Enter your choice (i|u|m): ").strip().lower()
 
         if choice == 'i':
             watch_id()
         elif choice == 'u':
-            watch_user()        
+            watch_user()
+        elif choice == 'm':
+            menu()
         else:
-         print(f"{red}Invalid choice Please select either (i/u){r}" )
-         time.sleep(1)
-
+            print(f"{R}Invalid choice Please select either (i/u/m){r}")
+            time.sleep(2)
 
 def login_easy():
     os.system("cls" if os.name == "nt" else "clear")
@@ -452,18 +666,20 @@ def login_easy():
     while True:
         open("sessionid.txt", "w").close()
         os.system("cls" if os.name == "nt" else "clear")
-        print(fade.greenblue(loginz)) 
-        print(f"{red}If you connect with the session ID, you will have more access to the information{r}")
+        print(fade.greenblue(loginz))
+        print(f"{R}If you connect with the session ID, you will have more access to the information{r}")
         m = input(f"{b}>{r} Do you want to login with password or session ID (p|s): ").lower().strip()
         
         if m == "p":
-            user = input(f"{red}>{r} Instagram USERNAME: ").strip()
+            user = input(f"{R}>{r} Instagram USERNAME: ").strip()
             session_pathx = f"C:\\Users\\{getpass.getuser()}\\AppData\\Local\\Instaloader\\session-{user}"
+            session_linuxien = f"/home/{getpass.getuser()}/.config/instaloader/session-{user}"
             
             try:
                 os.remove(session_pathx)
+                os.remove(session_linuxien)
             except FileNotFoundError:
-                pass 
+                pass
             
             if user not in user_list:
                 with open("user.txt", "a") as f:
@@ -473,37 +689,35 @@ def login_easy():
             break
 
         elif m == "s":
-            ig = instaloader.Instaloader()  
-            uzer = input(f"{red}>{r} Enter username: ").strip()
-            session = input(f"{red}>{r} Enter session ID: ").strip()
-            te = session.encode("utf-8")
-            b6 = base64.b64encode(te) 
-            bb = b6.decode("utf-8")
+            ig = instaloader.Instaloader()
+            uzer = input(f"{R}>{r} Enter username: ").strip()
+            session = input(f"{R}>{r} Enter session ID: ").strip()
             ig.context._session.cookies.set("sessionid", session)
             profile = instaloader.Profile.from_username(ig.context, uzer)
-            print(f" Successfully logged in as: {profile.username}")
-             
+            print(f"Successfully logged in as: {profile.username}")
+            
             with open("sessionid.txt", "w") as f:
-                    f.write(bb)
-                    break
-            print("Invalid choice Please enter 'p' or 's'")
+                f.write(session)
+                break
+            print(f"[{R}-{r}] Invalid choice Please enter 'p' or 's'")
             time.sleep(1)
-
 
 def menu():
     user = getpass.getuser()
     while True:
         os.system("cls" if os.name == "nt" else "clear")
         print(fade.pinkred(ban))
-        l = input(f"      {red}>{r} {user}: ")
+        l = input(f"      {R}>{r} {user}: ")
         if l.lower() == "1":
             user_info()
         elif l.lower() == "2":
             id_info()
         elif l.lower() == "3":
             watch_menu()
+        elif l.lower() == "4":
+            menu_2()
         else:
-            print(f"[{b}-{r}] {red}Invalid choice{r}")
+            print(f"[{R}-{r}] {R}Invalid choice{r}")
 
 def main():
     menu()
