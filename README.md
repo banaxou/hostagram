@@ -38,6 +38,7 @@
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=banaxou/hostagram&type=Date" />
  </picture>
 </a>
+
 ---
 
 ## 🚀 Roadmap
