@@ -2,7 +2,7 @@
 - 👉 https://jinversor.co/2025/07/hostagram/  1.2
 - 👉 https://esgeeks.com/hostagram-herramienta-osint/  1.0
 
-# 🎥 Tutorial 1.1  
+# 🎥 Tutorial 1.0
 👉 https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V  
 
 ---
@@ -132,7 +132,7 @@ Hostagram es una herramienta OSINT especializada en Instagram **en constante des
 
 - 📖 Documentación: [jinversor.co](https://jinversor.co/2025/07/hostagram/)  
 - 📖 Documentación alternativa: [esgeeks.com](https://esgeeks.com/hostagram-herramienta-osint/)  
-- 🎥 Tutorial 1.1: [YouTube](https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V)  
+- 🎥 Tutorial 1.0: [YouTube](https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V)  
   
 
 ## ❤️ Donar
