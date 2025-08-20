@@ -16,7 +16,7 @@
 
 ---
 
-## 📍​ usage hostagram
+## 📍​ tuto hostagram
 > *[french-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-fr.md)*
 
 > *[english-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-en.md)*
