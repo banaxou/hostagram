@@ -30,8 +30,14 @@
 
 ## ⭐ *Star stats*
 
-[![Star History Chart](https://api.star-history.com/svg?repos=banaxou/hostagram&type=Date&theme=dark)](https://www.star-history.com/#banaxou/hostagram&Date)
 
+<a href="https://www.star-history.com/#banaxou/hostagram&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=banaxou/hostagram&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=banaxou/hostagram&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=banaxou/hostagram&type=Date" />
+ </picture>
+</a>
 ---
 
 ## 🚀 Roadmap
