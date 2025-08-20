@@ -135,7 +135,7 @@ Hostagram es una herramienta OSINT especializada en Instagram **en constante des
 - 🎥 Tutorial 1.1: [YouTube](https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V)  
   
 
-## ❤️ Donate
+## ❤️ Donar
 
 Tu apoyo ayuda a mantener esta herramienta viva y de código abierto!
 
