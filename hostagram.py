@@ -504,6 +504,7 @@ def decox(info):
     print(center(f"{white}Category: {yellow}{info.get('Business category', 'N/A')}{r}"))
     print(center(f"{white}Highlights available: {yellow}{info.get('Has highlight reels', info.get('Highlight reels', 'N/A'))}{r}"))
     print(separator("═", color=blue))
+#End code by IA
 
 def watch_id():
     R = "\033[1;31m"
