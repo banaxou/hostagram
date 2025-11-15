@@ -47,7 +47,7 @@
 - v1.1: initial release
 - v1.2:  user info: email, phone
 - v1.3: **new page + new UI design + id info more info + watch id boosted +  new functions (email check | phone check | user check)**
-- termux-1.0: *coming for 2026 *
+- termux-1.0: *coming for 2026*
 - v1.4: ?? december
 - v1.5: ??
 - v2.0: ?? 
