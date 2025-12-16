@@ -47,7 +47,7 @@
 - v1.1: initial release
 - v1.2:  user info: email, phone
 - v1.3: **new page  + watch id boosted +  new functions (email check | phone check | user check)**
-- v1.4: 17 december 
+- v1.4: 20 december 
 - v1.5: ??
 - v2.0: ?? 
 
