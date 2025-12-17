@@ -3,7 +3,8 @@
 
 <a href="https://github.com/banaxou/hostagram/network/members"><img src="https://img.shields.io/github/forks/banaxou/hostagram" alt="Forks Badge" /></a>
 
-![banner](https://github.com/user-attachments/assets/72532e05-2bc1-43e0-9410-a049e7716660)
+<img width="573" height="141" alt="image" src="https://github.com/user-attachments/assets/11ac96ed-1e48-49ff-8b1d-dfc2a235619d" />
+
 
 > **Hostagram is a powerful OSINT tool for Instagram, designed to extract and monitor as much information as possible from any public (or accessible) Instagram account**
 
