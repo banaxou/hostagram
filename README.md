@@ -1,4 +1,4 @@
-# 🔴 Hostagram 1.3 | Instagram OSINT Tool 
+# 🔴 Hostagram 1.4 coming today | Instagram OSINT Tool 
 <a href="https://github.com/banaxou/hostagram/"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge" /></a>
 
 <a href="https://github.com/banaxou/hostagram/network/members"><img src="https://img.shields.io/github/forks/banaxou/hostagram" alt="Forks Badge" /></a>
