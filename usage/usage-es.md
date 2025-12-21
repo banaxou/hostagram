@@ -199,5 +199,3 @@ Tu apoyo ayuda a mantener esta herramienta **viva y de código abierto**
 ---
 
 > **Hostagram 1.4**
----
-coucou les gens des commit ouia j'ai pris  le copilot de  github pour faire les readme mais tranquille
