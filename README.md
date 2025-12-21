@@ -46,8 +46,8 @@
 
 - v1.0: old version
 - v1.1: initial release
-- v1.2:  user info: email, phone
-- v1.3: **new page  + watch id boosted +  new functions (email check | phone check | user check)**
+- v1.2: **update user | email | phone**
+- v1.3: **functions (email check | phone check | user check)**
 - v1.4: today ! **new fonction ( Follow Insight | List Viewer | Follow Watch )** 
 - v1.5:  maybe 2026
 - v2.0: ??? 
