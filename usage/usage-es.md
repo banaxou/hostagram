@@ -200,5 +200,4 @@ Tu apoyo ayuda a mantener esta herramienta **viva y de código abierto**
 
 > **Hostagram 1.4**
 ---
-
-Si tu veux, je peux aussi te générer une **version ES + FR + EN alignée**, ou une **table des matières automatique** pour GitHub.
+coucou les gens des commit ouia j'ai pris  le copilot de  github pour faire les readme mais tranquille
