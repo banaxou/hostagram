@@ -1,17 +1,17 @@
 # 📖 Documentación Auxiliar  
-- 👉 https://jinversor.co/2025/07/hostagram/  1.2
-- 👉 https://esgeeks.com/hostagram-herramienta-osint/  1.0
+- 👉 https://jinversor.co/2025/07/hostagram/ 1.2  
+- 👉 https://esgeeks.com/hostagram-herramienta-osint/ 1.0  
 
-# 🎥 Tutorial 1.0
+# 🎥 Tutorial 1.0  
 👉 https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V  
 
 ---
 
-# Hostagram - Uso 🚀
+# Hostagram – Uso 🚀
 
 ## Consejo 💡
 
-Antes de comenzar, se recomienda crear una cuenta de Instagram dedicada al OSINT desde tu PC.  
+Antes de comenzar, se recomienda crear una **cuenta de Instagram dedicada al OSINT** desde tu PC.
 
 > Una versión para Termux está en desarrollo.
 
@@ -25,7 +25,7 @@ Antes de comenzar, se recomienda crear una cuenta de Instagram dedicada al OSINT
 git clone https://github.com/banaxou/hostagram
 cd hostagram
 pip install -r requirements.txt
-python hostagram.py # o mediante go.bat
+python hostagram.py  # o mediante go.bat
 ```
 
 ### Linux 🐧
@@ -40,116 +40,165 @@ python3 hostagram.py
 ---
 
 ## Login 🔑
+
 ![login](https://github.com/banaxou/hostagram/blob/main/img/login1.3.png)
 
-**Después de ejecutar Hostagram, serás redirigido a una página con el texto `login`.**  
+Después de ejecutar Hostagram, serás redirigido a una página con el texto `login`
 
-> Inicia sesión con tu cuenta de Instagram dedicada al OSINT.  
+> Inicia sesión con tu cuenta de Instagram dedicada al OSINT
 
-Puedes iniciar sesión con tu **Session ID** o con tu **contraseña**.  
-**Se recomienda usar tu Session ID** para aprovechar al máximo las funciones de Hostagram, especialmente el acceso a más información sobre tu objetivo.
+Puedes iniciar sesión con:
+
+- **Tu Session ID**
+- **Tu contraseña**
+
+**Se recomienda usar tu Session ID**, ya que permite acceder a más información sobre tu objetivo
 
 ---
 
 ## Menú Principal 🏠
+
 ![menu](https://github.com/banaxou/hostagram/blob/main/img/hostagram1.3.png)
 
-**Una vez conectado, serás redirigido al menú principal donde aparece el logo __HOSTAGRAM__.**  
+Una vez conectado, serás redirigido al **menú principal**, donde aparece el logo **HOSTAGRAM**
 
-> Actualmente, hay **seis funciones** disponibles.  
-Más opciones se añadirán con el tiempo.
-
----
-
-## Funcionalidades ⚙️
-
-### 1. `user-info` 👤
-
-> Permite obtener información sobre un **perfil de Instagram**.
+> Actualmente hay varias funciones disponibles
+Más opciones se añadirán próximamente
 
 ---
 
-### 2. `id-info` 🆔
-
-Si tu objetivo te ha bloqueado o cambiado de nombre de usuario:
-
-* Ve al directorio `hostagram`
-* Abre el archivo `.json` correspondiente al objetivo
-* Recupera el **ID** del perfil
-* Usa ese ID con el comando `id-info` para encontrar su **nuevo nombre de usuario**
-
-Esta función está **en desarrollo**.
+# Funcionalidades ⚙️
 
 ---
 
-### 3. `watch-user` 👀
+## 1. `user-info` 👤
 
-Esta funcionalidad funciona con:
-
-* El **username**
-* O el **ID** del perfil  
-
-Esta función está **en desarrollo** y sufrirá muchas mejoras.  
-
-Permite **supervisar y registrar todas las actividades del perfil objetivo**, casi en tiempo real.  
-
-> **Incluso si cierras sesión, *Hostagram sigue rastreando cada acción del perfil*, siempre que tu máquina permanezca encendida.  
-⚠️ Atención: no abuses de esta función, ya que existe riesgo de baneo de IP por parte de Instagram.  
-Los proxys aún no están presentes en Hostagram, pero se añadirán pronto.**
+> Obtiene información completa de un **perfil de Instagram**
 
 ---
 
-### 4. `phone-check` 📱
+## 2. `id-info` 🆔
 
-> **Verifica si un número está asociado a Instagram.  
-Esta función *solo indica si el número está vinculado a Instagram*, pero no muestra el nombre de usuario ni otra información.**
+Si tu objetivo te ha bloqueado o ha cambiado su nombre de usuario:
 
----
+1. Ve al directorio `hostagram`  
+2. Abre el archivo `.json` correspondiente  
+3. Recupera el **ID** del perfil  
+4. Usa ese ID con `id-info` para encontrar su **nuevo nombre de usuario**
 
-### 5. `email-check` 📧
-
-> **Verifica si una dirección de correo está asociada a Instagram.  
-Esta función *solo indica si el correo está vinculado a Instagram*, pero no muestra el nombre de usuario ni otra información.**
-
----
-
-### 6. `username-check` 🔍
-
-> **Verifica si un nombre de usuario está asociado a Instagram.  
-Esta función permite saber si la cuenta existe y está activa, pero no muestra otra información como seguidores, correo electrónico o número de teléfono.**
+> Función en desarrollo.
 
 ---
 
-## Próximamente 🔜
+## 3. `watch-user` 👀
 
-¡Más de **10 nuevas funciones** están previstas!  
+Compatible con:
 
-Hostagram es una herramienta OSINT especializada en Instagram **en constante desarrollo**
+- El **nombre de usuario**
+- El **ID** del perfil
+
+Permite **supervisar y registrar en tiempo casi real todas las actividades del perfil objetivo**
+
+> Incluso si cierras sesión, *Hostagram sigue monitoreando*, siempre que tu máquina permanezca encendida
+⚠️ El uso excesivo puede provocar un baneo de IP
+El soporte para proxys llegará pronto
+
+---
+
+## 4. `phone-check` 📱
+
+> Verifica si un **número de teléfono** está asociado a Instagram
+Solo indica si está vinculado; no revela el nombre de usuario
 
 ---
 
-## 📚 Recursos adicionales  
+## 5. `email-check` 📧
 
-- 📖 Documentación: [jinversor.co](https://jinversor.co/2025/07/hostagram/)  
-- 📖 Documentación alternativa: [esgeeks.com](https://esgeeks.com/hostagram-herramienta-osint/)  
-- 🎥 Tutorial 1.0: [YouTube](https://youtu.be/ZBV1ZSwuNPw?si=xyAWMKp66J-TYC8V)  
-  
-
-## ❤️ Donar
-
-Tu apoyo ayuda a mantener esta herramienta viva y de código abierto!
-
-
-<h1>Ethereum</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" width="20">  
-
-[0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58](https://etherscan.io/address/0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58)
+> Verifica si un **correo electrónico** está asociado a Instagram 
+No revela el nombre de usuario vinculado
 
 ---
-‎<h1>sol</h1>
+
+## 6. `username-check` 🔍
+
+> Verifica si un **nombre de usuario** existe en Instagram
+No muestra información adicional (seguidores, correo, teléfono…)
+
+---
+
+## 7. `follow Insight` 🔍
+
+> Muestra la lista completa de **seguidores** de un perfil, incluyendo:  
+> - ID  
+> - Nombre de usuario  
+> - Cuenta privada o pública  
+> - Estado de verificación  
+>
+> Muestra hasta **50 seguidores y seguidos** en la terminal
+> Todos los datos se guardan en un **archivo JSON**
+
+---
+
+## 8. `List Viewer` 📄
+
+Permite visualizar **la lista completa de seguidores y seguidos** de un objetivo
+
+> **Tip OSINT:**  
+Usa `grep` para buscar rápidamente un usuario dentro de la lista
+
+---
+
+## 9. `Follow Watch` ⏱️
+
+Una de las funciones más potentes de Hostagram
+
+Permite **monitorear en tiempo real la actividad de los seguidores y seguidos** del objetivo:
+
+- Nuevos follows  
+- Unfollows  
+- Hora, minuto y segundo exactos  
+- Todo se guarda en un **archivo JSON**
+
+### Ejemplo OSINT:
+
+```
+Una persona de tu entorno ha desaparecido o, por cualquier motivo, ya no responde a tus mensajes y se supone que no tiene acceso a su teléfono. Gracias a Follow Watch, puedes ver la actividad de los seguidores y seguidos de la cuenta:
+
+- se ha seguido a un perfil,
+- y luego dejó de seguirlo unos minutos después
+
+Puedes deducir que la persona está activa en Instagram
+```
+
+---
+
+# Próximamente 🔜
+
+Más de **5 nuevas funciones** están previstas.
+
+Hostagram es una herramienta OSINT para Instagram **en constante evolución**
+
+---
+
+# ❤️ Donar
+
+Tu apoyo ayuda a mantener esta herramienta **viva y de código abierto**
+
+### Ethereum  
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" width="20">
+
+`0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58`
+
+---
+
+### Solana  
 <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png" width="20">
 
-[BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
+`BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2`
 
-> **Hostagram 1.3**
 ---
+
+> **Hostagram 1.4**
+---
+
+Si tu veux, je peux aussi te générer une **version ES + FR + EN alignée**, ou une **table des matières automatique** pour GitHub.
