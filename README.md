@@ -25,7 +25,7 @@
 
 > *[spanish-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-es.md)*
 
-> **🛠️ Hostagram is in active development. This is version 1.3 even more upgrades are coming ! The final version of Hostagram will be 3.0**
+> **🛠️ Hostagram is in active development. This is version 1.4 even more upgrades are coming ! The final version of Hostagram will be 3.0**
 
 
 
