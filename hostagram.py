@@ -1,7 +1,9 @@
 # code by ovax version 1.4
 # best funk [ REZA TORTA | montagem batchi ]
 
-import instaloader, fade, os
+import instaloader
+import fade
+import os
 import time
 import getpass
 import pycountry
@@ -11,7 +13,6 @@ import hashlib
 import urllib.parse
 import httpx
 import asyncio
-import base64
 import requests
 from datetime import datetime
 from urllib.parse import quote_plus
@@ -266,7 +267,7 @@ def datax_follow(sessionId):
 
     try:
         user_id = resp.json()["data"]["user"]["id"]
-    except:
+    except (KeyError, ValueError):
         print(f"{R}Unable to extract data error{r}")
         time.sleep(2)
         return
@@ -289,7 +290,7 @@ def datax_follow(sessionId):
                 break
             try:
                 data = r.json()
-            except:
+            except ValueError:
                 print(f"{R}json error{r}")
                 time.sleep(1)
                 break
@@ -341,9 +342,9 @@ def datax_follow(sessionId):
             left_line = left.split("\n") if left else []
             right_line = right.split("\n") if right else []
             for j in range(max(len(left_line), len(right_line))):
-                l = left_line[j] if j < len(left_line) else ""
+                left_part = left_line[j] if j < len(left_line) else ""
                 ri = right_line[j] if j < len(right_line) else ""
-                print(f"  {l:<45}     {ri:<45}")
+                print(f"  {left_part:<45}     {ri:<45}")
             print()
 
         with open(f"{usid}_followers.json", "w", encoding="utf-8") as f:
@@ -381,7 +382,7 @@ def fetch_all(sessionId, user_id, rel_type, headers):
 
         try:
             data = r.json()
-        except:
+        except Exception:
             break
 
         for u in data.get("users", []):
@@ -409,7 +410,7 @@ def follow_watch(sessionId):
 
     try:
         user = resp.json()["data"]["user"]
-    except:
+    except (KeyError, ValueError, Exception):
         print(f"{R}Invalid response{RST}")
         return
 
@@ -672,7 +673,7 @@ def user_info():
                     cc = region_code_for_country_code(pn.country_code)
                     country = pycountry.countries.get(alpha_2=cc)
                     phone += f" ({country.name})"
-                except:
+                except Exception:
                     pass
                 info["Public phone"] = phone
 
@@ -787,7 +788,7 @@ def decox(info):
 
     try:
         width = os.get_terminal_size().columns
-    except:
+    except OSError:
         width = 100
 
     def center(text, w=width):
@@ -796,7 +797,7 @@ def decox(info):
     def separator(char="─", w=None, color=white):
         try:
             w = os.get_terminal_size().columns if w is None else w
-        except:
+        except OSError:
             w = 80
         return color + char * w + r
 
@@ -1008,7 +1009,7 @@ def watch_menu():
 
 def login_easy():
     os.system("cls" if os.name == "nt" else "clear")
-    
+
     user_list = []
     if os.path.exists("user.txt"):
         with open("user.txt", "r") as f:
@@ -1020,22 +1021,22 @@ def login_easy():
         print(fade.greenblue(loginz))
         print(f"{R}If you connect with the session ID, you will have more access to the information{r} ")
         m = input(f"{b}>{r} Do you want to login with password or session ID (p|s): ").lower().strip()
-        
+
         if m == "p":
             user = input(f"{R}>{r} Instagram USERNAME: ").strip()
             session_pathx = f"C:\\Users\\{getpass.getuser()}\\AppData\\Local\\Instaloader\\session-{user}"
             session_linuxien = f"/home/{getpass.getuser()}/.config/instaloader/session-{user}"
-            
+
             try:
                 os.remove(session_pathx)
                 os.remove(session_linuxien)
             except FileNotFoundError:
                 pass
-            
+
             if user not in user_list:
                 with open("user.txt", "a") as f:
                     f.write(user + "\n")
-            
+
             os.system(f"instaloader --login {user}")
             break
 
@@ -1047,7 +1048,7 @@ def login_easy():
             profile = instaloader.Profile.from_username(ig.context, uzer)
             print(f"Successfully logged in as: {profile.username}")
             time.sleep(1)
-            
+
             with open("sessionid.txt", "w") as f:
                 f.write(session)
                 break
@@ -1060,14 +1061,14 @@ def menu():
     while True:
         os.system("cls" if os.name == "nt" else "clear")
         print(fade.pinkred(ban))
-        l = input(f"      {R}>{r} {user}: ")
-        if l.lower() == "1":
+        choice = input(f"      {R}>{r} {user}: ").strip()
+        if choice.lower() == "1":
             user_info()
-        elif l.lower() == "2":
+        elif choice.lower() == "2":
             id_info()
-        elif l.lower() == "3":
+        elif choice.lower() == "3":
             watch_menu()
-        elif l.lower() == "4":
+        elif choice.lower() == "4":
             menu_2()
         else:
             print(f"[{R}-{r}] {R}Invalid choice{r}")
