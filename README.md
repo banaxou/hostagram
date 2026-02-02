@@ -49,9 +49,7 @@
 - v1.2: **update user | email | phone**
 - v1.3: **functions (email check | phone check | user check)**
 - v1.4: **new fonction ( Follow Insight | List Viewer | Follow Watch )** 
-- v1.5:  maybe 2026
-- v2.0: ??? CLI -
-
+- v2.0: ??? 
 ---
 
 ## 📝 Example Output (fields extracted)
