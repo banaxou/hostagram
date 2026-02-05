@@ -15,6 +15,22 @@
 - **Hostagram never steals your password**  
 - Use your own session ID for full access (only public info is available on private/locked accounts)
 
+
+## ❤️ Donate
+
+Your support helps keep this tool alive and open source!
+
+<h1>Ethereum</h1>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" width="20">  
+
+[0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58](https://etherscan.io/address/0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58)
+
+---
+‎<h1>sol</h1>
+<img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png" width="20">
+
+[BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
+
 ---
 
 ## 📍​ usage hostagram
@@ -93,20 +109,6 @@
 Want to suggest an improvement or help with code? Open an issue or pull request 
 
 ---
-## ❤️ Donate
-
-Your support helps keep this tool alive and open source!
-
-<h1>Ethereum</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" width="20">  
-
-[0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58](https://etherscan.io/address/0x4cc818bc2C4291CEa8117D9F8D8417EE054fEA58)
-
----
-‎<h1>sol</h1>
-<img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png" width="20">
-
-[BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
 
 > **Hostagram 1.4**
 ---
