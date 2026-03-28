@@ -3,7 +3,7 @@
 All versions are compromised ..
 
 # hostagram 2 soon
-[hostagram 2](https://github.com/banaxou/hostagram/issues/9)
+[ about hostagram 2](https://github.com/banaxou/hostagram/issues/9)
 
 
 <a href="https://github.com/banaxou/hostagram/"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge" /></a>
