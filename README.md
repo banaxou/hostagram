@@ -1,9 +1,11 @@
-# 🔴 Hostagram 1.4 | Instagram OSINT Tool bug   
+# hostagram 2 soon 🌸
+
 (**Instaloader is poison**) 
 All versions are compromised ..
-
-# hostagram 2 soon
+# hostagram 2 
 [ about hostagram 2](https://github.com/banaxou/hostagram/issues/9)
+
+## ( Hostagram 2 will be released in May If you’d like to help, feel free to share your ideas by opening an issue on this GitHub )
 
 
 <a href="https://github.com/banaxou/hostagram/"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge" /></a>
@@ -15,12 +17,6 @@ All versions are compromised ..
 
 > **Hostagram is a powerful OSINT tool for Instagram, designed to extract and monitor as much information as possible from any public (or accessible) Instagram account**
 
-## 🚦 Before You Start
-
-- **Create a dedicated Instagram account for OSINT purposes**  
-  Some features require authentication
-- **Hostagram never steals your password**  
-- Use your own session ID for full access (only public info is available on private/locked accounts)
 
 
 ## ❤️ Donate
@@ -39,16 +35,6 @@ Your support helps keep this tool alive and open source!
 [BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2](https://solscan.io/account/BVMkqwkMjtTNmD5spKayhYeb6JUfmReGxGaD4kcetXp2)
 
 ---
-
-## 📍​ usage hostagram
-> *[french-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-fr.md)*
-
-> *[english-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-en.md)*
-
-
-> *[spanish-usage](https://github.com/banaxou/hostagram/blob/main/usage/usage-es.md)*
-> 
-> *[how to have session id ?](https://github.com/banaxou/hostagram/blob/main/usage/sessions_id_tuto.md)*
 
 > **🛠️ Hostagram is in active development. This is version 1.4 even more upgrades are coming ! The final version of Hostagram will be 3.0**
 
@@ -74,42 +60,9 @@ Your support helps keep this tool alive and open source!
 - v1.2: **update user | email | phone**
 - v1.3: **functions (email check | phone check | user check)**
 - v1.4: **new fonction ( Follow Insight | List Viewer | Follow Watch )** 
-- v2.0: ??? 
+- v2.0: **may** ??
 ---
 
-## 📝 Example Output (fields extracted)
-
-| Field                    | Value (Example)              |
-|--------------------------|------------------------------|
-| Full name                | Johnny go                    |
-| Username                 | @example                     |
-| ID                       | 123456789                    |
-| Bio                      | lifestyle • Art              |
-| Bio URL                  | https://example.com          |
-| Followees                | 342                          |
-| Followers                | 1500                         |
-| Number of posts          | 56                           |
-| Business category        | blog                         |
-| Type account             | Business                     |
-| Private account          | False                        |
-| Verified account         | False                        |
-| Has highlight reels      | True                         |
-| Biography hashtags       | #Photography                 |
-| Biography mentions       | @don_pollo @dio              |
-| Follows viewer           | False                        |
-| Followed by viewer       | True                         |
-| Blocked by viewer        | False                        |
-| Profile picture URL      | https://example.com/photo.jpg|
-| Memorialized             | False                        |
-| New to Instagram         | False                        |
-| WhatsApp linked          | False                        |
-| HD Profile picture URL   | https://example.com/hd.jpg   |
-| Public email             | contact@****.com             |
-| Obfuscated email         | co****@m**s.com              |
-| Obfuscated phone         | +** * ** ** ** 25            |
-| Lookup message           | "Success"                    |
-
----
 
 
 ## 🌸 Contribute
