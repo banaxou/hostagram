@@ -1,4 +1,5 @@
 # hostagram 2 soon 22 may 🌸
+# hostagram 1 is Unusable ! 💥
 
 (**Instaloader is poison**) 
 All versions are compromised ..
