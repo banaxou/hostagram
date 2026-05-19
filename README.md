@@ -1,5 +1,10 @@
-# hostagram 2 soon 22 may 🌸
-# hostagram 1 is Unusable ! 💥
+
+
+# Hostagram v2 has been postponed to an undetermined date due to a TPM-related issue on my PC. I am currently running Linux
+
+
+## hostagram 2 soon 22 may 🌸
+## hostagram 1 is Unusable ! 💥
 
 (**Instaloader is poison**) 
 All versions are compromised ..
