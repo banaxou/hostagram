@@ -1,4 +1,9 @@
-## hostagram 2 soon ```??``` may?? 🌸
+## hostagram 2 soon ```??``` ?? 🌸
+## Hostagram V2
+
+Progress: 38%
+
+███████████████░░░░░░░░░░░░░░░░
 ## hostagram 1 is Unusable ! 💥
 
 (**Instaloader is poison**) 
