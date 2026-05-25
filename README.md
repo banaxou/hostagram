@@ -11,8 +11,6 @@ All versions are compromised ..
 # hostagram 2 
 [ about hostagram 2](https://github.com/banaxou/hostagram/issues/9)
 
-## ( Hostagram 2 will be released in May If you’d like to help, feel free to share your ideas by opening an issue on this GitHub )
-
 
 <a href="https://github.com/banaxou/hostagram/"><img src="https://img.shields.io/github/stars/banaxou/hostagram" alt="Stars Badge" /></a>
 
