@@ -1,9 +1,3 @@
-
-
-# Hostagram v2 has been postponed to an undetermined date due to a TPM-related issue on my PC. I am currently running Linux
-
-
-
 ## hostagram 2 soon ```??``` may?? 🌸
 ## hostagram 1 is Unusable ! 💥
 
