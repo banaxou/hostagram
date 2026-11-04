@@ -1,0 +1,15 @@
+# Local credentials and login history
+/sessionid.txt
+/user.txt
+
+# Python environments and caches
+.venv/
+venv/
+ovax/
+__pycache__/
+*.py[cod]
+
+# Generated profile exports and monitoring logs
+/*.json
+/*.txt
+!/requirements.txt

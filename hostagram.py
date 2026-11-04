@@ -6,6 +6,8 @@ import fade
 import os
 import time
 import getpass
+import subprocess
+import sys
 import pycountry
 import json
 import hmac
@@ -1012,11 +1014,10 @@ def login_easy():
 
     user_list = []
     if os.path.exists("user.txt"):
-        with open("user.txt", "r") as f:
+        with open("user.txt", "r", encoding="utf-8") as f:
             user_list = f.read().splitlines()
 
     while True:
-        open("sessionid.txt", "w").close()
         os.system("cls" if os.name == "nt" else "clear")
         print(fade.greenblue(loginz))
         print(f"{R}If you connect with the session ID, you will have more access to the information{r} ")
@@ -1024,32 +1025,45 @@ def login_easy():
 
         if m == "p":
             user = input(f"{R}>{r} Instagram USERNAME: ").strip()
-            session_pathx = f"C:\\Users\\{getpass.getuser()}\\AppData\\Local\\Instaloader\\session-{user}"
-            session_linuxien = f"/home/{getpass.getuser()}/.config/instaloader/session-{user}"
+            if not user:
+                print(f"{R}Empty username{r}")
+                time.sleep(1)
+                continue
 
             try:
-                os.remove(session_pathx)
-                os.remove(session_linuxien)
-            except FileNotFoundError:
-                pass
+                subprocess.run(
+                    [sys.executable, "-m", "instaloader", "--login", user],
+                    check=True,
+                )
+            except (subprocess.CalledProcessError, OSError):
+                print(f"{R}Login failed. Please try again.{r}")
+                time.sleep(1)
+                continue
 
             if user not in user_list:
-                with open("user.txt", "a") as f:
+                with open("user.txt", "a", encoding="utf-8") as f:
                     f.write(user + "\n")
 
-            os.system(f"instaloader --login {user}")
+            # Do not reuse a session ID belonging to a previous login.
+            with open("sessionid.txt", "w", encoding="utf-8"):
+                pass
             break
 
         elif m == "s":
             ig = instaloader.Instaloader()
             uzer = input(f"{R}>{r} Enter username: ").strip()
-            session = input(f"{R}>{r} Enter session ID: ").strip()
+            session = getpass.getpass(f"{R}>{r} Enter session ID: ").strip()
             ig.context._session.cookies.set("sessionid", session)
-            profile = instaloader.Profile.from_username(ig.context, uzer)
+            try:
+                profile = instaloader.Profile.from_username(ig.context, uzer)
+            except instaloader.exceptions.InstaloaderException:
+                print(f"{R}Login failed. Please check your username and session ID.{r}")
+                time.sleep(1)
+                continue
             print(f"Successfully logged in as: {profile.username}")
             time.sleep(1)
 
-            with open("sessionid.txt", "w") as f:
+            with open("sessionid.txt", "w", encoding="utf-8") as f:
                 f.write(session)
                 break
         else:
@@ -1074,9 +1088,8 @@ def menu():
             print(f"[{R}-{r}] {R}Invalid choice{r}")
 
 def main():
+    login_easy()
     menu()
-
-login_easy()
 
 if __name__ == "__main__":
     main()
